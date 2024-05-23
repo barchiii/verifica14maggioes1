@@ -5,13 +5,23 @@ public class Contatto {
     public String cognome;
     public String telefono;
     public tipoContratto tipo;
-    public double saldo;
 
     protected boolean nascosto;
 
+    public String stampaN()
+    {
+        String check = "";
+        if (nascosto) {
+            check="privato";
+        }else {
+            check="pubblico";
+        }
+        return String.format("Nome: %s Cognome: %s Telefono: %s, tipo: %s, check: %s", nome, cognome, telefono, tipo.toString(),check);
+    }
+
     public String stampa()
     {
-        return String.format("Nome: %s Cognome: %s Telefono: %s, tipo: %s, saldo: %s", nome, cognome, telefono, tipo.toString(), saldo);
+        return String.format("Nome: %s Cognome: %s Telefono: %s, tipo: %s", nome, cognome, telefono, tipo.toString());
     }
     @Override
     public String toString()
